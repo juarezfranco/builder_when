@@ -1,25 +1,20 @@
 import 'package:flutter/widgets.dart';
-
 /// Conditional build creator
 class BuilderWhen extends StatelessWidget {
   /// Flag to build
   final bool condition;
-
-  /// Widget to build when condition is true
-  final Widget isTrue;
-
-  /// Widget to build when condition is false
-  final Widget isFalse;
-
+  /// Closure-based builder for when condition is true
+  final Widget Function(BuildContext) builderWhenTrue;
+  /// Closure-based builder for when condition is false
+  final Widget Function(BuildContext) builderWhenFalse;
   const BuilderWhen({
-    super.key,
+    Key? key,
     required this.condition,
-    required this.isTrue,
-    required this.isFalse,
-  });
-
+    required this.builderWhenTrue,
+    required this.builderWhenFalse,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return condition ? isTrue : isFalse;
+    return condition ? builderWhenTrue(context) : builderWhenFalse(context);
   }
 }
