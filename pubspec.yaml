@@ -1,5 +1,5 @@
 name: builder_when
-description: Conditional build creator
+description: The BuilderWhen class is a simple yet powerful tool designed for Flutter applications. It provides a streamlined way to conditionally build and display widgets based on a given condition.
 version: 0.0.2
 homepage: https://github.com/juarezfranco/builder_when
 
