@@ -11,5 +11,5 @@ Created the initial version of the package.
 * Changed component structure to prevent memory loading.
 
 # 1.1.1
-Created BuilderWhenClosure to facilitate builder creation.
+* Created BuilderWhenClosure to facilitate builder creation.
 
