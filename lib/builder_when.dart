@@ -9,17 +9,17 @@ class BuilderWhen extends StatelessWidget {
   final Widget isTrue;
 
   /// Widget to build when condition is false
-  final Widget isFale;
+  final Widget isFalse;
 
   const BuilderWhen({
     super.key,
     required this.condition,
     required this.isTrue,
-    required this.isFale,
+    required this.isFalse,
   });
 
   @override
   Widget build(BuildContext context) {
-    return condition ? isTrue : isFale;
+    return condition ? isTrue : isFalse;
   }
 }
