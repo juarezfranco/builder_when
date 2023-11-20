@@ -42,10 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: BuilderWhen(
         condition: condition,
-        isTrue: (_) => const Center(
+        builderWhenTrue: (_) => const Center(
           child: Text('True'),
         ),
-        isFalse: (_) => const Center(
+        builderWhenFalse: (_) => const Center(
           child: Text('False'),
         ),
       ),
