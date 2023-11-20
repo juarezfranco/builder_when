@@ -18,11 +18,11 @@ To use BuilderWhen, simply provide a condition, isTrue widget, and isFalse widge
 ```dart
 BuilderWhen(
   condition: condition,
-  builderWhenTrue: (_) => Text(
+  isTrue: (context) => Text(
     'Condition is TRUE',
     style: TextStyle(fontSize: 24, color: Colors.green),
   ),
-  builderWhenFalse: (_) => Text(
+  isFalse: (context) => Text(
     'Condition is FALSE',
     style: TextStyle(fontSize: 24, color: Colors.red),
   ),
