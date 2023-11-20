@@ -4,17 +4,19 @@ class BuilderWhen extends StatelessWidget {
   /// Flag to build
   final bool condition;
   /// Closure-based builder for when condition is true
-  final Widget Function(BuildContext) builderWhenTrue;
+  final Widget Function(BuildContext) isTrue;
   /// Closure-based builder for when condition is false
-  final Widget Function(BuildContext) builderWhenFalse;
+  final Widget Function(BuildContext) isFalse;
+
   const BuilderWhen({
     Key? key,
     required this.condition,
     required this.builderWhenTrue,
     required this.builderWhenFalse,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return condition ? builderWhenTrue(context) : builderWhenFalse(context);
+    return condition ? isTrue(context) : isFalse(context);
   }
 }
