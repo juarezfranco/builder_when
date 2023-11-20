@@ -16,64 +16,17 @@ To use BuilderWhen, simply provide a condition, isTrue widget, and isFalse widge
 ## Example
 
 ```dart
-import 'package:flutter/material.dart';
-
-// Import the BuilderWhen class (make sure this class is in your codebase)
-import 'path_to_builder_when.dart'; // Replace with the actual path of BuilderWhen class
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BuilderWhen Example',
-      home: BuilderWhenExample(),
-    );
-  }
-}
-
-class BuilderWhenExample extends StatefulWidget {
-  @override
-  _BuilderWhenExampleState createState() => _BuilderWhenExampleState();
-}
-
-class _BuilderWhenExampleState extends State<BuilderWhenExample> {
-  bool _toggleCondition = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('BuilderWhen Example'),
-      ),
-      body: Center(
-        // Using BuilderWhen
-        child: BuilderWhen(
-          condition: _toggleCondition,
-          isTrue: Text(
-            'Condition is TRUE',
-            style: TextStyle(fontSize: 24, color: Colors.green),
-          ),
-          isFale: Text(
-            'Condition is FALSE',
-            style: TextStyle(fontSize: 24, color: Colors.red),
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _toggleCondition = !_toggleCondition;
-          });
-        },
-        child: Icon(Icons.refresh),
-      ),
-    );
-  }
-}
+BuilderWhen(
+  condition: condition,
+  isTrue: Text(
+    'Condition is TRUE',
+    style: TextStyle(fontSize: 24, color: Colors.green),
+  ),
+  isFalse: Text(
+    'Condition is FALSE',
+    style: TextStyle(fontSize: 24, color: Colors.red),
+  ),
+)
 ```
 
 
