@@ -11,8 +11,8 @@ class BuilderWhen extends StatelessWidget {
   const BuilderWhen({
     Key? key,
     required this.condition,
-    required this.builderWhenTrue,
-    required this.builderWhenFalse,
+    required this.isTrue,
+    required this.isFalse,
   }) : super(key: key);
 
   @override
