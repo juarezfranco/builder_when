@@ -1,39 +1,80 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# BuilderWhen: A Conditional Build Creator for Flutter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+## Overview
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+The BuilderWhen class is a simple yet powerful tool designed for Flutter applications. It provides a streamlined way to conditionally build and display widgets based on a given condition.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Conditional Rendering: Effortlessly render different widgets based on a boolean condition.
+- Simplicity and Efficiency: Minimalistic and easy-to-understand syntax that enhances code readability and maintainability.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use BuilderWhen, simply provide a condition, isTrue widget, and isFalse widget. Based on the state of the condition, either isTrue or isFalse will be rendered. This functionality is particularly useful for scenarios where UI elements need to change dynamically in response to user interactions or data changes.
+
+## Example
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+
+// Import the BuilderWhen class (make sure this class is in your codebase)
+import 'path_to_builder_when.dart'; // Replace with the actual path of BuilderWhen class
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'BuilderWhen Example',
+      home: BuilderWhenExample(),
+    );
+  }
+}
+
+class BuilderWhenExample extends StatefulWidget {
+  @override
+  _BuilderWhenExampleState createState() => _BuilderWhenExampleState();
+}
+
+class _BuilderWhenExampleState extends State<BuilderWhenExample> {
+  bool _toggleCondition = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BuilderWhen Example'),
+      ),
+      body: Center(
+        // Using BuilderWhen
+        child: BuilderWhen(
+          condition: _toggleCondition,
+          isTrue: Text(
+            'Condition is TRUE',
+            style: TextStyle(fontSize: 24, color: Colors.green),
+          ),
+          isFale: Text(
+            'Condition is FALSE',
+            style: TextStyle(fontSize: 24, color: Colors.red),
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _toggleCondition = !_toggleCondition;
+          });
+        },
+        child: Icon(Icons.refresh),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Made with ❤ in Brazil
